@@ -2,15 +2,16 @@
 	https://www.html5rocks.com/en/tutorials/file/dndfiles/
 */
 function readFiles(files){
+
     var output= [];
-    for(var i =0,f;f=files[i] ; i++){
-        output.push('<li><strong>',escape(f.name),'</strong>(',f.type||'n/a', ')-',
+    for(var i =0, f ; f=files[i] ; i++){
+        output.push('<li><strong>',escape(f.name),'</strong>(',f.type ||'n/a', ')-',
             f.size,'bytes, last modified: ',
             f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
             '</li>');
     }
 
-    document.getElementById('list').innerHTML ='<ul>' +output.jion('') +'</ul>';
+    document.getElementById('list').innerHTML ='<ul>' +output.join ('') +'</ul>';
 
 
     document.getElementById('content').innerHTML ='';
@@ -45,7 +46,7 @@ function handleFileSelect_drag(evt){
     evt.preventDefault();
     var files = evt.dataTransfer.files;
 
-    readFiles (files);
+    readFiles(files);
 }
 
 function handleDragOver(evt){
