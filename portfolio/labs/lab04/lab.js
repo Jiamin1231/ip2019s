@@ -100,6 +100,7 @@ var second='';
                 $('#i1').val(0);
                 $('#i4').val('');
                 $('#i5').val('');
+
             },500);
         }else{
             setTimeout(function() {
