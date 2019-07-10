@@ -87,7 +87,7 @@ var second='';
         var myid2='#' + $('#i5').val();
 
         if(first== second){
-            setTimeOut(function() {
+            setTimeout(function() {
                 //do something special
                 $(myid1).addClass('done');
                 //$(this).addClass('done');
@@ -102,7 +102,7 @@ var second='';
                 $('#i5').val('');
             },500);
         }else{
-            setTimeOut(function() {
+            setTimeout(function() {
                 //do something special
                 $(myid1).removeClass('selected');
                 $(myid2).removeClass('selected');
