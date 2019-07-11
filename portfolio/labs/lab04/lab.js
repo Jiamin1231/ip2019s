@@ -17,7 +17,8 @@ function issueCard() {
                     break;
         }
     }
-    $('.issue').hide().fadeIn(5000);
+    $('.issue').hide().fadeIn(1000);
+    $('.ref').hide().fadeIn(1000);
 }
 
 function update() {
@@ -28,6 +29,8 @@ function update() {
   $('.back').attr("src","./joker-card.svg");
 }
 
+
+
 $(function() {
 
     issueCard();//發牌
@@ -37,8 +40,20 @@ $(function() {
 //buttom listener
 $('#b1').on('click',function(){
     $('.issue').addClass("back");
+    $('.ref').addClass("back");
     update();
 });
+
+$('#b2').on('click',function(){
+    $('.ref').removeClass("back");
+    update();
+});
+
+$("#d2").mouseenter(function(){
+  $('.ref').addClass("back");
+    update();
+});
+
 
 flip=0;
 var first='';
@@ -50,7 +65,6 @@ var second='';
 
     $(this).removeClass("back");
     update();
-
     $(this).addClass("selected");
 
     if(flip==0){
@@ -123,5 +137,7 @@ var second='';
     }
     update();
   });
+
+
 
  });
